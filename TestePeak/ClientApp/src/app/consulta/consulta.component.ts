@@ -7,10 +7,10 @@ import { Component, Inject } from '@angular/core';
   styleUrls: ['./consulta.component.css']
 })
 export class ConsultaComponent {
-  public indice: number;
-  public nome: string;
+  public indice!: number;
+  public nome!: string;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {}
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) { }
 
   onSubmit() {
     this.http.get<string>('api/Consulta', {

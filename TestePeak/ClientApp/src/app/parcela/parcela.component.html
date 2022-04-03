@@ -1,0 +1,32 @@
+<h1>Parcelas</h1>
+
+<form class="p-2">
+  <div class="row">
+    <div class="form-group m-1 col-10">
+      <label for="valor">Valor</label>
+      <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor das Parcelas" [(ngModel)]="valor">
+      <small id="valorHelp" class="form-text text-muted">Este é o valor das parcelas a serem pagas, não o montante!</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group m-1 col-5">
+      <label for="parcelas">Parcelas</label>
+      <input type="number" class="form-control" id="parcelas" name="parcelas" placeholder="Numero de parcelas a serem pagas" [(ngModel)]="parcelas">
+    </div>
+    <div class="form-group m-1 col-5">
+      <label for="juros">Juros (%)</label>
+      <input type="number" class="form-control" id="juros" name="juros" placeholder="Juros a ser aplicado no valor final" [(ngModel)]="juros">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Calcular</button>
+    </div>
+  </div>
+</form>
+<div class="row p-2">
+  <label for="total">
+    <strong>Total a ser pago:</strong>
+  </label>
+  <p>{{total | currency : 'BRL'}}</p>
+</div>

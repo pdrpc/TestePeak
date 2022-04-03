@@ -15,9 +15,9 @@ namespace TestePeak.Controllers
     {
         [HttpPost]
         [Route("Calculo")]
-        public String Calculo(int parcelas, decimal valor)
+        public String Calculo(int parcelas, decimal valor, decimal juros)
         {
-            var resultado = (decimal)(valor * parcelas) + ((decimal)(valor * parcelas) * (decimal)0.05);
+            var resultado = (decimal)(valor * parcelas) + ((decimal)(valor * parcelas) * (juros/100));
             var total = JsonConvert.SerializeObject(resultado);
 
             return total;

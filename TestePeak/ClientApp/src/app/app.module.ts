@@ -11,16 +11,16 @@ registerLocaleData(ptBr);
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { ParcelasComponent } from './parcelas/parcelas.component';
 import { ConsultaComponent } from './consulta/consulta.component';
+import { ParcelaComponent } from './parcela/parcela.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    ParcelasComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    ParcelaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +28,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'parcelas', component: ParcelasComponent },
+      { path: 'parcela', component: ParcelaComponent },
       { path: 'consulta', component: ConsultaComponent },
     ])
   ],

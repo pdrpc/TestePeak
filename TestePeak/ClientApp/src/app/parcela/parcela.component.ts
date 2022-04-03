@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 
 @Component({
-  selector: 'app-parcelas',
-  templateUrl: './parcelas.component.html',
-  styleUrls: ['./parcelas.component.css']
+  selector: 'app-parcela',
+  templateUrl: './parcela.component.html',
+  styleUrls: ['./parcela.component.css']
 })
-export class ParcelasComponent  {
-  public total: number;
-  public valor: number;
-  public parcelas: number;
+export class ParcelaComponent {
+  public total!: number;
+  public valor!: number;
+  public juros!: number;
+  public parcelas!: number;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) { }
 
@@ -17,7 +18,8 @@ export class ParcelasComponent  {
     this.http.post<any>('api/Parcelas/Calculo', null, {
       params: {
         valor: this.valor.toString(),
-        parcelas: this.parcelas.toString()
+        parcelas: this.parcelas.toString(),
+        juros: this.juros.toString()
       }
     }).subscribe(result => {
       console.log(result);

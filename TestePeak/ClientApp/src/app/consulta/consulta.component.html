@@ -1,17 +1,15 @@
 <h1>Consulta</h1>
-<div class="form-group">
-  <div>
-    <label for="indice">
-      <strong>Indice: </strong>
-    </label>
-    <input class="form-control" type="number" name="indice" id="indice" [(ngModel)]="indice" />
+
+<form class="p-2">
+  <div class="form-group m-1">
+    <label for="indice">Indice</label>
+    <input type="number" class="form-control" id="indice" name="indice" placeholder="Indice" [(ngModel)]="indice">
   </div>
-  <br />
-  <div>
-    <button type="button" class="btn-primary btn" (click)="onSubmit()">Calcular</button>
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Calcular</button>
   </div>
-</div>
-<div>
+</form>
+<div class="row p-2">
   <label for="nome">
     <strong>Nome: </strong>
   </label>
